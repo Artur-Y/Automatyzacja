@@ -120,9 +120,10 @@ public class MyStoreAddNewAddressStep {
         try {
             driver.findElement(By.xpath("(//*[@class='address-body'])[2]"));
         } catch (Exception e) {
-            System.out.println("Address has been deleted correctly");
+            System.out.println(driver.findElement(By.xpath("//*[@class='alert alert-success']")).getText());
 
         }
+
 
     }
 
