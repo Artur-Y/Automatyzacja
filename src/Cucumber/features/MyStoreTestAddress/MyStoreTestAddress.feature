@@ -6,6 +6,7 @@ Feature: Add new address to existing user account
     And Filled existing user's email and password
     And Button Sign In on the authorization page clicked
     When Button Addresses clicked
+    And Url of opened page is https://mystore-testlab.coderslab.pl/index.php?controller=addresses
     And Button Create new address clicked
     And Form filled by <Alias>, <Address>, <City>, <Zip_Postal_Code>, <Country>, <Phone>
     And Button Save clicked

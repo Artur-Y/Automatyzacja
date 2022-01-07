@@ -1,4 +1,4 @@
-package Zadanie_1;
+package zadanie_1;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
