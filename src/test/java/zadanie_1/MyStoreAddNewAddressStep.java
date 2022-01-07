@@ -28,30 +28,30 @@ public class MyStoreAddNewAddressStep {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
     }
 
-    @Given("^Opened page (.*) in browser$")
+    @Given("^Open page (.*) in browser$")
     public void openPage(String url) {
         driver.get(url);
     }
 
-    @And("Button Sign In on the homepage clicked")
+    @And("Button Sign In on the homepage click")
     public void SignInBtnOnHomepageClick() {
         loginToUserAccount = new LoginToUserAccount(driver);
         loginToUserAccount.SignInBtnOnHomepageClicked();
 
     }
 
-    @And("^Filled existing user's email and password$")
+    @And("^Fill existing user's email and password$")
     public void FillUserEmailAndPassword() {
         loginToUserAccount.FilledUserEmailAndPassword();
     }
 
 
-    @And("Button Sign In on the authorization page clicked")
+    @And("Button Sign In on the authorization page click")
     public void SignInBtnOnAuthorizationPageClick() {
         loginToUserAccount.SignInBtnOnAuthorizationPageClicked();
     }
 
-    @When("Button Addresses clicked")
+    @When("Button Addresses click")
     public void BtnAddressesClick() {
         createNewAddress = new CreateNewAddress(driver);
         createNewAddress.BtnAddressesClick();
@@ -62,12 +62,12 @@ public class MyStoreAddNewAddressStep {
         createNewAddress.AssertionPage(urlOfOpenedPage);
     }
 
-    @And("Button Create new address clicked")
+    @And("Button Create new address click")
     public void BtnCreateNewAddressClick() {
         createNewAddress.BtnCreateNewAddressClick();
     }
 
-    @And("^Form filled by (.*), (.*), (.*), (.*), (.*), (.*)$")
+    @And("^Form fill by (.*), (.*), (.*), (.*), (.*), (.*)$")
     public void FillForm(String Alias, String Address, String City,
                          String Zip_Postal_Code, String Country, String Phone) {
 
@@ -75,7 +75,7 @@ public class MyStoreAddNewAddressStep {
 
     }
 
-    @And("Button Save clicked")
+    @And("Button Save click")
     public void BtnSaveClick() {
         createNewAddress.BtnSaveClick();
     }
