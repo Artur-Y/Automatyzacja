@@ -17,8 +17,8 @@ public class OrderTheItem {
     }
 
     public void ClickOnTheItem() {
-        WebElement HummingbirdPrintedSweater = driver.findElement(By.xpath("//*[@class='h3 product-title']" +
-                "/a[text()='Hummingbird printed sweater']"));
+        WebElement HummingbirdPrintedSweater = driver.findElement(By
+                .xpath("//*[@class='h3 product-title']/a[text()='Hummingbird printed sweater']"));
         HummingbirdPrintedSweater.click();
     }
 
@@ -41,15 +41,15 @@ public class OrderTheItem {
     }
 
     public void ButtonProceedToCheckoutOnPupupWindowClick() {
-        WebElement buttonProceedToCheckoutOnPupupWindow = driver.findElement(By.xpath("//*" +
-                "[@class='btn btn-primary'][text()='Proceed to checkout']"));
+        WebElement buttonProceedToCheckoutOnPupupWindow = driver.findElement(By
+                .xpath("//*[@class='btn btn-primary'][text()='Proceed to checkout']"));
         buttonProceedToCheckoutOnPupupWindow.click();
 
     }
 
     public void ButtonProceedToCheckoutOnPageShoppingCartClick() {
-        WebElement buttonProceedToCheckoutOnPageShoppingCart = driver.findElement(By.xpath("//*" +
-                "[@class='btn btn-primary'][text()='Proceed to checkout']"));
+        WebElement buttonProceedToCheckoutOnPageShoppingCart = driver.findElement(By
+                .xpath("//*[@class='btn btn-primary'][text()='Proceed to checkout']"));
         buttonProceedToCheckoutOnPageShoppingCart.click();
     }
 
@@ -59,8 +59,8 @@ public class OrderTheItem {
     }
 
     public void ChoseShippingMethod() {
-        WebElement ShoppingMethodCheckbox = driver.findElement(By.xpath("//*" +
-                "[@class='h6 carrier-name'][text()='PrestaShop']"));
+        WebElement ShoppingMethodCheckbox = driver.findElement(By
+                .xpath("//*[@class='h6 carrier-name'][text()='PrestaShop']"));
         ShoppingMethodCheckbox.click();
     }
 
@@ -75,15 +75,14 @@ public class OrderTheItem {
     }
 
     public void CheckAgreeToTheTerms() {
-        WebElement checkboxAgreeToTheTerms = driver.findElement(By.id
-                ("conditions_to_approve[terms-and-conditions]"));
+        WebElement checkboxAgreeToTheTerms = driver.findElement(By
+                .id("conditions_to_approve[terms-and-conditions]"));
         checkboxAgreeToTheTerms.click();
 
     }
 
     public void ClickBtnOrder() {
-        WebElement orderButton = driver.findElement(By.xpath(
-                "//*[@class='btn btn-primary center-block']"));
+        WebElement orderButton = driver.findElement(By.xpath("//*[@class='btn btn-primary center-block']"));
         orderButton.click();
 
     }

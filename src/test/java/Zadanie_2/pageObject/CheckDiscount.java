@@ -34,16 +34,20 @@ public class CheckDiscount {
 
             WebElement regularPriceElement = driver.findElement(By
                     .xpath("//*[@class='regular-price']"));
+
             String regularPrice = regularPriceElement.getText();
             regularPrice = regularPrice.replace("€", "");
+
             double regularPriceNum = Double.parseDouble(regularPrice); //convert to double
             BigDecimal bd = new BigDecimal(regularPriceNum).setScale(2, RoundingMode.HALF_UP); //round to 2 decimal
             double regularPriceNumRounded = bd.doubleValue();
 
             WebElement currentPriceElement = driver.findElement(By
                     .xpath("//*[@class='current-price']/span[@itemprop='price']"));
+
             String currentPrice = currentPriceElement.getText();
             currentPrice = currentPrice.replace("€", "");
+
             double currentPriceNum = Double.parseDouble(currentPrice);
             BigDecimal bd2 = new BigDecimal(currentPriceNum).setScale(2, RoundingMode.HALF_UP);
             double currentPriceNumRounded = bd2.doubleValue();

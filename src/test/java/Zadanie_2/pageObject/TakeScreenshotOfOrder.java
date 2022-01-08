@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
-public class TakeScreenshotOfOrder{
+public class TakeScreenshotOfOrder {
     private WebDriver driver;
 
     public TakeScreenshotOfOrder(WebDriver driver) {
@@ -20,7 +20,9 @@ public class TakeScreenshotOfOrder{
     public void TakeScreenshot() throws IOException {
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File tmpScreenshot = screenshot.getScreenshotAs(OutputType.FILE);
+
         String currentDateTime = LocalDateTime.now().toString().replaceAll(":", "_");
-        Files.copy(tmpScreenshot.toPath(), Paths.get("C:", "Coders", "Screenshots", "screen" + currentDateTime + ".png"));
+        Files.copy(tmpScreenshot.toPath(),
+                Paths.get("C:", "Coders", "Screenshots", "screen" + currentDateTime + ".png"));
     }
 }

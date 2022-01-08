@@ -57,6 +57,7 @@ public class CheckOrder {
 
         driver.navigate().forward();
         driver.navigate().forward();
+
         WebElement totalPrice = driver.findElement(By
                 .xpath("//tbody/tr/th[@scope='row'][text()='" + orderId + "']" +
                         "//following::td[@class='text-xs-right']"));

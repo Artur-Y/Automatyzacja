@@ -17,7 +17,7 @@ public class MyStorePurchaseStep {
     private OrderTheItem orderTheItem;
     private CheckOrder checkOrder;
 
-    @Given("^Opened page (.*) in browser1$")
+    @Given("^Opened page (.*) in browser$")
     public void openBrowser(String url) {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
@@ -26,31 +26,31 @@ public class MyStorePurchaseStep {
         driver.get(url);
     }
 
-    @And("Button Sign In on the homepage clicked1")
+    @And("Button Sign In on the homepage clicked")
     public void SignInBtnOnHomepageClick() {
         loginToUserAccount = new LoginToUserAccount(driver);
         loginToUserAccount.SignInBtnOnHomepageClicked();
 
     }
 
-    @And("^Filled existing user's email and password1$")
+    @And("^Filled existing user's email and password$")
     public void FilledUserEmailAndPassword() {
         loginToUserAccount.FilledUserEmailAndPassword();
     }
 
 
-    @And("Button Sign In on the authorization page clicked1")
+    @And("Button Sign In on the authorization page clicked")
     public void SignInBtnOnAuthorizationPageClicked() {
         loginToUserAccount.SignInBtnOnAuthorizationPageClicked();
     }
 
-    @And("^Clicked on the logo 'my store'1$")
+    @And("^Clicked on the logo \"my store\"$")
     public void MyStoreLogoClick() {
         orderTheItem = new OrderTheItem(driver);
         orderTheItem.MyStoreLogoClick();
     }
 
-    @When("Clicked on the item 'Hummingbird Printed Sweater'")
+    @When("^Click on the item \"Hummingbird Printed Sweater\"$")
     public void ClickOnTheItem() {
         orderTheItem.ClickOnTheItem();
     }
@@ -75,49 +75,49 @@ public class MyStorePurchaseStep {
 
     }
 
-    @And("Clicked button Add to card")
+    @And("Click button Add to card")
     public void ButtonAddToCardClick() {
         orderTheItem.ButtonAddToCardClick();
     }
 
-    @And("Clicked button Proceed to checkout on pop-up window")
+    @And("Click button Proceed to checkout on pop-up window")
     public void ButtonProceedToCheckoutOnPupupWindowClick() {
         orderTheItem.ButtonProceedToCheckoutOnPupupWindowClick();
 
     }
 
-    @And("Clicked button Proceed to checkout on page Shopping cart")
+    @And("Click button Proceed to checkout on page Shopping cart")
     public void ButtonProceedToCheckoutOnPageShoppingCartClick() {
         orderTheItem.ButtonProceedToCheckoutOnPageShoppingCartClick();
     }
 
-    @And("Confirmed address by clicking on button Continue")
+    @And("Confirm address by clicking on button Continue")
     public void ConfirmAddress() {
         orderTheItem.ConfirmAddress();
     }
 
-    @And("^Chosen shipping method PrestaShop \"pick up in store\"$")
+    @And("^Chose shipping method PrestaShop \"pick up in store\"$")
     public void ChoseShippingMethod() {
         orderTheItem.ChoseShippingMethod();
     }
 
-    @And("Confirmed shipping method by clicking on button Continue")
+    @And("Confirm shipping method by clicking on button Continue")
     public void ConfirmShippingMethod() {
         orderTheItem.ConfirmShippingMethod();
     }
 
-    @And("Chosen payment method Pay by Check")
+    @And("Chose payment method Pay by Check")
     public void ChosePaymentMethod() {
         orderTheItem.ChosePaymentMethod();
     }
 
-    @And("^Checked checkbox \"I agree to the terms service\"$")
+    @And("^Check checkbox \"I agree to the terms service\"$")
     public void CheckAgreeToTheTerms() {
         orderTheItem.CheckAgreeToTheTerms();
 
     }
 
-    @And("Clicked button \"Order with an obligation to pay\"")
+    @And("Click button \"Order with an obligation to pay\"")
     public void ClickBtnOrder() {
         orderTheItem.ClickBtnOrder();
 
@@ -147,12 +147,17 @@ public class MyStorePurchaseStep {
     public void CheckInvoiceStatus() {
         checkOrder.CheckInvoiceStatus();
 
-
     }
 
     @And("Check \"Total Price\" value of order$")
     public void CheckTotalPrice() {
         checkOrder.CheckTotalPrice();
+
+    }
+
+    @And("Close browser")
+    public void CloseBrowser() {
+        driver.quit();
 
     }
 }

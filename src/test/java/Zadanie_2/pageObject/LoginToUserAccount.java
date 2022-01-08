@@ -13,7 +13,8 @@ public class LoginToUserAccount {
 
 
     public void SignInBtnOnHomepageClicked() {
-        WebElement signInBtnHomepage = driver.findElement(By.xpath("//*[@class='hidden-sm-down'][contains(text(), 'Sign')]"));
+        WebElement signInBtnHomepage = driver.findElement(By
+                .xpath("//*[@class='hidden-sm-down'][contains(text(), 'Sign')]"));
         signInBtnHomepage.click();
 
     }
