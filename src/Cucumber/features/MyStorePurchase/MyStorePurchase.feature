@@ -20,8 +20,14 @@ Feature: Purchase the item
     And Checked checkbox "I agree to the terms service"
     And Clicked button "Order with an obligation to pay"
     Then Create screenshot of confirmed order page
+    And Click customer account button
+    And Click "ORDER HISTORY AND DETAILS" button
+    And Check "Invoice" status "Awaiting check payment" of order
+    And Check "Total Price" value of order
 #    And Close browser
 
     Examples:
       | quantity |  | size |
       | 5        |  | M    |
+
+

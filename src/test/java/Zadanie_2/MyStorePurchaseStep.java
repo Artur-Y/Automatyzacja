@@ -6,10 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import zadanie_2.pageObject.CheckDiscount;
-import zadanie_2.pageObject.LoginToUserAccount;
-import zadanie_2.pageObject.OrderTheItem;
-import zadanie_2.pageObject.TakeScreenshotOfOrder;
+import zadanie_2.pageObject.*;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -18,6 +15,7 @@ public class MyStorePurchaseStep {
     private WebDriver driver;
     private LoginToUserAccount loginToUserAccount;
     private OrderTheItem orderTheItem;
+    private CheckOrder checkOrder;
 
     @Given("^Opened page (.*) in browser1$")
     public void openBrowser(String url) {
@@ -130,5 +128,31 @@ public class MyStorePurchaseStep {
         TakeScreenshotOfOrder takeScreenshotOfOrder = new TakeScreenshotOfOrder(driver);
         takeScreenshotOfOrder.TakeScreenshot();
     }
-//    And Close browser
+
+
+    @And("Click customer account button")
+    public void ClickCustomerAccountBtn() {
+        checkOrder = new CheckOrder(driver);
+        checkOrder.ClickCustomerAccountBtn();
+
+    }
+
+    @And("^Click \"ORDER HISTORY AND DETAILS\" button$")
+    public void ClickOrderHistoryAndDetailsBtn() {
+        checkOrder.ClickOrderHistoryAndDetailsBtn();
+
+    }
+
+    @And("^Check \"Invoice\" status \"Awaiting check payment\" of order$")
+    public void CheckInvoiceStatus() {
+        checkOrder.CheckInvoiceStatus();
+
+
+    }
+
+    @And("Check \"Total Price\" value of order$")
+    public void CheckTotalPrice() {
+        checkOrder.CheckTotalPrice();
+
+    }
 }
