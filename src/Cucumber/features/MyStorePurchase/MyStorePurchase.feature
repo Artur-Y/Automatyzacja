@@ -1,14 +1,3 @@
-#wybierze do zakupu Hummingbird Printed Sweater (opcja dodatkowa: sprawdzi czy rabat na niego wynosi 20%),
-#wybierze rozmiar M (opcja dodatkowa: zrób tak żeby można było sparametryzować rozmiar i wybrać S,M,L,XL),
-#wybierze 5 sztuk według parametru podanego w teście (opcja dodatkowa: zrób tak żeby można było sparametryzować liczbę sztuk),
-#dodaj produkt do koszyka,
-#przejdzie do opcji - checkout,
-#potwierdzi address (możesz go dodać wcześniej ręcznie),
-#wybierze metodę odbioru - PrestaShop "pick up in store",
-#wybierze opcję płatności - Pay by Check,
-#kliknie na "order with an obligation to pay",
-#zrobi screenshot z potwierdzeniem zamówienia i kwotą.
-
 Feature: Purchase the item
 
   Scenario Outline: Purchase the item on https://mystore-testlab.coderslab.pl
@@ -18,7 +7,8 @@ Feature: Purchase the item
     And Button Sign In on the authorization page clicked1
     And Clicked on the logo 'my store'1
     When Clicked on the item 'Hummingbird Printed Sweater'
-    And Size M selected
+    And Check discount 20%
+    And Size <size> select
     And Quantity <quantity> selected
     And Clicked button Add to card
     And Clicked button Proceed to checkout on pop-up window
@@ -33,5 +23,5 @@ Feature: Purchase the item
 #    And Close browser
 
     Examples:
-      | quantity |
-      | 5        |
+      | quantity |  | size |
+      | 5        |  | M    |
